@@ -47,7 +47,12 @@ function App() {
   }
 
   function deleteTask(index) {
-    setTask(tasks.filter((task, i) => i !== index));
+    const confirmed = window.confirm(
+      "Apakah Anda yakin ingin menghapus tugas ini?"
+    );
+    if (confirmed) {
+      setTask(tasks.filter((task, i) => i !== index));
+    }
   }
 
   return (
